@@ -6,6 +6,8 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
+import Foundation
+
 public protocol Issue {
     var id: Int { get }
     var number: Int { get }

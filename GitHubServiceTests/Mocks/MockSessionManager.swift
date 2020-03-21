@@ -6,6 +6,7 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
+import Foundation
 @testable import GitHubService
 
 final class MockSessionManager: SessionManager {

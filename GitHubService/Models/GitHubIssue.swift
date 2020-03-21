@@ -6,6 +6,8 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
+import Foundation
+
 struct GitHubIssue: Issue {
     let id: Int
     let number: Int

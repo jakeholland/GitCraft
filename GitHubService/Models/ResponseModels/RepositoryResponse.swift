@@ -6,6 +6,8 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
+import Foundation
+
 struct RepositoryResponse: Codable {
     let id: Int
     let node_id: String
