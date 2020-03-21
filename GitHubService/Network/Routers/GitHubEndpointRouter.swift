@@ -32,6 +32,7 @@ extension GitHubEndpointRouter {
         }
        
         urlRequest.addValue("Accept: application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+        urlRequest.addValue("GitCraft", forHTTPHeaderField: "User-Agent")
         
         return urlRequest
     }

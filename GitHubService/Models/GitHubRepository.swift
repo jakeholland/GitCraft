@@ -1,5 +1,5 @@
 //
-//  Repository.swift
+//  GitHubRepository.swift
 //  GitHubService
 //
 //  Created by Jacob Holland on 3/20/20.
@@ -8,17 +8,15 @@
 
 import Foundation
 
-public struct Repository {
-    public let name: String
-    public let description: String?
-    public let owner: String
-    public let forkCount: Int
-    public let starCount: Int
-    public let watchCount: Int
-    public let issueCount: Int
-}
-
-extension Repository {
+struct GitHubRepository: Repository {
+    let name: String
+    let description: String?
+    let owner: String
+    let forkCount: Int
+    let starCount: Int
+    let watchCount: Int
+    let issueCount: Int
+    
     init(from repositoryResponse: RepositoryResponse) {
         name = repositoryResponse.name
         description = repositoryResponse.description

@@ -22,7 +22,7 @@ public struct GitHubService: GitHubServiceProtocol {
         request.responseDecodable([RepositoryResponse].self) { result in
             switch result {
             case .success(let repositoryResponseArray):
-                let repositories = repositoryResponseArray.map { Repository(from: $0)}
+                let repositories = repositoryResponseArray.map { GitHubRepository(from: $0)}
                 completion(.success(repositories))
             case .failure(let error):
                 completion(.failure(error))
@@ -38,7 +38,7 @@ public struct GitHubService: GitHubServiceProtocol {
         request.responseDecodable([IssueResponse].self) { result in
             switch result {
             case .success(let issueResponseArray):
-                let issues = issueResponseArray.map { Issue(from: $0)}
+                let issues = issueResponseArray.map { GitHubIssue(from: $0) }
                 completion(.success(issues))
             case .failure(let error):
                 completion(.failure(error))
