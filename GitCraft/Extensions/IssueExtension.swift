@@ -10,7 +10,7 @@ import GitHubService
 import UIKit
 
 extension Issue {
-    private var closedImage: UIImage { UIImage(systemName: "exclamationmark.circle")!.withTintColor(.systemRed) }
-    private var openImage: UIImage { UIImage(systemName: "checkmark.circle")!.withTintColor(.systemGreen) }
+    private var closedImage: UIImage { UIImage(systemName: "checkmark.circle")!.withTintColor(.systemGreen) }
+    private var openImage: UIImage { UIImage(systemName: "exclamationmark.circle")!.withTintColor(.systemRed) }
     var badgeImage: UIImage { isClosed ? closedImage : openImage }
 }

@@ -15,7 +15,8 @@ struct GitHubRepository: Repository {
     let forkCount: Int
     let starCount: Int
     let watchCount: Int
-    let issueCount: Int
+    let openIssueCount: Int
+    let hasIssues: Bool
     
     init(from repositoryResponse: RepositoryResponse) {
         name = repositoryResponse.name
@@ -24,6 +25,7 @@ struct GitHubRepository: Repository {
         forkCount = repositoryResponse.forks_count
         starCount = repositoryResponse.stargazers_count
         watchCount = repositoryResponse.watchers_count
-        issueCount = repositoryResponse.open_issues ?? 0
+        openIssueCount = repositoryResponse.open_issues_count
+        hasIssues = repositoryResponse.has_issues
     }
 }

@@ -17,8 +17,8 @@ final class RepositoryViewModel {
     var watchersText: String { "\(repository.watchCount) Watchers"}
     var starsText: String { "\(repository.starCount) Stars"}
     var forksText: String { "\(repository.forkCount) Forks"}
-    var issuesText: String { "Issues (\(repository.issueCount))"}
-    var hasIssues: Bool { repository.issueCount > 0 }
+    var issuesText: String { "Issues (\(repository.openIssueCount) Open)"}
+    var hasIssues: Bool { repository.hasIssues }
     
     private let gitHubService: GitHubServiceProtocol
     

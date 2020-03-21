@@ -13,5 +13,6 @@ public protocol Repository {
     var forkCount: Int { get }
     var starCount: Int { get }
     var watchCount: Int { get }
-    var issueCount: Int { get }
+    var openIssueCount: Int { get }
+    var hasIssues: Bool { get }
 }
