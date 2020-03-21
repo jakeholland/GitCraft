@@ -82,17 +82,44 @@
             </objects>
             <point key="canvasLocation" x="71.014492753623188" y="112.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Issue View Controller-->
         <scene sceneID="ajV-KE-8cB">
             <objects>
-                <viewController id="iFi-uj-JfB" sceneMemberID="viewController">
+                <viewController id="iFi-uj-JfB" customClass="IssueViewController" customModule="GitCraft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FlU-0E-JqE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-wj-zVh" userLabel="Details">
+                                <rect key="frame" x="16" y="104" width="382" height="81"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaI-tb-JoH">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="41"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4L-eq-Ib8">
+                                        <rect key="frame" x="0.0" y="57" width="382" height="24"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="oWo-wj-zVh" firstAttribute="top" secondItem="Yry-HX-kIs" secondAttribute="top" constant="16" id="2U2-7i-zmZ"/>
+                            <constraint firstItem="oWo-wj-zVh" firstAttribute="leading" secondItem="Yry-HX-kIs" secondAttribute="leading" constant="16" id="IUU-JN-qVF"/>
+                            <constraint firstItem="Yry-HX-kIs" firstAttribute="trailing" secondItem="oWo-wj-zVh" secondAttribute="trailing" constant="16" id="fsv-1Q-tEk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yry-HX-kIs"/>
                     </view>
                     <navigationItem key="navigationItem" id="MnR-Qz-kVa"/>
+                    <connections>
+                        <outlet property="bodyLabel" destination="p4L-eq-Ib8" id="Ikn-q4-Rgx"/>
+                        <outlet property="titleLabel" destination="gaI-tb-JoH" id="E3t-Lf-plj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPp-hK-Di0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,15 @@ final class IssuesViewController: UIViewController {
         getIssues()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let issueViewController = segue.destination as? IssueViewController,
+            let issueTableViewCell = sender as? IssueTableViewCell
+            else { return }
+        
+        issueViewController.configure(for: issueTableViewCell.issue)
+    }
+    
     func configure(for repository: Repository) {
         viewModel = IssuesViewModel(repository: repository)
     }
