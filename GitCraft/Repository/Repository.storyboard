@@ -180,7 +180,7 @@
                                                 <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Issues (3)" image="exclamationmark.triangle" catalog="system"/>
                                                 <connections>
-                                                    <segue destination="lcb-KR-pPk" kind="show" id="zkf-ha-qD4"/>
+                                                    <segue destination="lcb-KR-pPk" kind="presentation" id="zkf-ha-qD4"/>
                                                 </connections>
                                             </button>
                                         </subviews>

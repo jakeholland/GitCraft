@@ -22,7 +22,7 @@ final class IssuesViewModel {
     }
     
     func getIssues(success: @escaping () -> Void, failure: @escaping (Error) -> Void) {
-        gitHubService.getIssues(for: repository.name, in: repository.owner){ [weak self] result in
+        gitHubService.getIssues(for: repository.owner, in: repository.name) { [weak self] result in
             switch result {
             case .success(let issues):
                 self?.issues = issues

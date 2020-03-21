@@ -32,7 +32,8 @@ final class RepositoryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-            let issuesViewController = segue.destination as? IssuesViewController
+            let navigationController = segue.destination as? UINavigationController,
+        let issuesViewController = navigationController.visibleViewController as? IssuesViewController
             else { return }
         
         issuesViewController.configure(for: viewModel.repository)
@@ -50,6 +51,7 @@ private extension RepositoryViewController {
         watchersLabel.text = viewModel.watchersText
         starsLabel.text = viewModel.starsText
         forksLabel.text = viewModel.forksText
-        issuesButton.setTitle( viewModel.issuesText, for: .normal)
+        issuesButton.setTitle(viewModel.issuesText, for: .normal)
+        issuesButton.isEnabled = viewModel.hasIssues
     }
 }

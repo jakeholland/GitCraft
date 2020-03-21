@@ -18,8 +18,8 @@ final class IssueTableViewCell: UITableViewCell {
     
     func configure(for issue: Issue) {
         self.issue = issue
-        nameLabel.text = "#\(issue.number)"
-        descriptionLabel.text = issue.title
+        nameLabel.text = "#\(issue.number) - \(issue.title)"
+        descriptionLabel.text = issue.body
     }
 }
 

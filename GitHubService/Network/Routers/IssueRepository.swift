@@ -15,9 +15,7 @@ enum IssueRouter: GitHubEndpointRouter {
         switch self {
         case .getIssues(let username, let repo, let state):
             let queries: Parameters = [
-                "milestone": "*",
-                "state": state.rawValue,
-                "assignee": "*"
+                "state": state.rawValue
             ]
 
             return RequestComponents(method: .get, path: "repos/\(username)/\(repo)/issues", queries: queries)

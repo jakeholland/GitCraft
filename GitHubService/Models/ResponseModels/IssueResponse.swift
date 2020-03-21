@@ -23,13 +23,13 @@ struct IssueResponse: Codable {
     let body: String
     let user: Assignee
     let labels: [Label]
-    let assignee: Assignee
+    let assignee: Assignee?
     let assignees: [Assignee]
-    let milestone: Milestone
+    let milestone: Milestone?
     let locked: Bool
-    let active_lock_reason: String
+    let active_lock_reason: String?
     let comments: Int
-    let pull_request: PullRequest
+    let pull_request: PullRequest?
     let closed_at: Date?
     let created_at: Date
     let updated_at: Date
@@ -61,9 +61,9 @@ struct Label: Codable {
     let node_id: String
     let url: String
     let name: String
-    let label_description: String
+    let label_description: String?
     let color: String
-    let label_default: Bool
+    let label_default: Bool?
 }
 
 struct Milestone: Codable {
@@ -75,13 +75,13 @@ struct Milestone: Codable {
     let number: Int
     let state: String
     let title: String
-    let milestone_description: String
+    let milestone_description: String?
     let creator: Assignee
     let open_issues: Int
     let closed_issues: Int
     let created_at: Date
     let updated_at: Date
-    let closed_at: Date
+    let closed_at: Date?
     let due_on: Date
 }
 

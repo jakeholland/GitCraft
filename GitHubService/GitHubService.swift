@@ -17,7 +17,7 @@ public struct GitHubService: GitHubServiceProtocol {
     
     public func getRepositories(for username: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
         let components: RepositoryRouter = .getRepositories(username: username, type: .all, sort: .created, sortDirection: .asc)
-        let request =  Request(urlRequest: components.urlRequest, sessionManager: sessionManager)
+        let request = Request(urlRequest: components.urlRequest, sessionManager: sessionManager)
          
         request.responseDecodable([RepositoryResponse].self) { result in
             switch result {
@@ -33,7 +33,7 @@ public struct GitHubService: GitHubServiceProtocol {
     
     public func getIssues(for username: String, in repository: String, completion: @escaping (Result<[Issue], Error>) -> Void) {
         let components: IssueRouter = .getIssues(username: username, repo: repository, state: .all)
-        let request =  Request(urlRequest: components.urlRequest, sessionManager: sessionManager)
+        let request = Request(urlRequest: components.urlRequest, sessionManager: sessionManager)
          
         request.responseDecodable([IssueResponse].self) { result in
             switch result {
