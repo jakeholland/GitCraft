@@ -11,6 +11,7 @@ import UIKit
 
 final class IssueTableViewCell: UITableViewCell {
     
+    @IBOutlet private var badgeImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     
@@ -20,6 +21,7 @@ final class IssueTableViewCell: UITableViewCell {
         self.issue = issue
         nameLabel.text = "#\(issue.number) - \(issue.title)"
         descriptionLabel.text = issue.body
+        badgeImageView.image = issue.badgeImage
     }
 }
 

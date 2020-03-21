@@ -15,6 +15,7 @@ struct GitHubIssue: Issue {
     let body: String
     let date: Date
     let lastUpdated: Date
+    let isClosed: Bool
 
     init(from issueResponse: IssueResponse) {
         id = issueResponse.id
@@ -23,5 +24,6 @@ struct GitHubIssue: Issue {
         body = issueResponse.body
         date = issueResponse.created_at
         lastUpdated = issueResponse.updated_at
+        isClosed = issueResponse.closed_at != nil
     }
 }

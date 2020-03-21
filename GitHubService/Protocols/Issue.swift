@@ -15,4 +15,5 @@ public protocol Issue {
     var body: String { get }
     var date: Date { get }
     var lastUpdated: Date { get }
+    var isClosed: Bool { get }
 }

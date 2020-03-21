@@ -10,16 +10,17 @@ import GitHubService
 import UIKit
 
 final class IssueViewController: UIViewController {
-
-    @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var bodyLabel: UILabel!
     
+    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet private var dateLabel: UILabel!
+    @IBOutlet private var bodyLabel: UILabel!
+    @IBOutlet private var badgeImageView: UIImageView!
+    @IBOutlet private var badgeLabel: UILabel!
     
     private var viewModel: IssueViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     }
     
@@ -32,5 +33,8 @@ private extension IssueViewController {
     func setup() {
         titleLabel.text = viewModel.title
         bodyLabel.text = viewModel.body
+        badgeImageView.image = viewModel.badgeImage
+        badgeLabel.text = viewModel.badgeText
+        dateLabel.text = viewModel.dateString
     }
 }

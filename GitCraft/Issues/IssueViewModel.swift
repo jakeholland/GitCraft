@@ -6,8 +6,8 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
-import Foundation
 import GitHubService
+import UIKit
 
 struct IssueViewModel {
     
@@ -20,6 +20,8 @@ struct IssueViewModel {
         dateFormatter.dateFormat = "h:mm a' on 'M/d/yyyy"
         return dateFormatter.string(from: issue.date)
     }
+    var badgeImage: UIImage { issue.badgeImage }
+    var badgeText: String { issue.isClosed ? "Closed" : "Open" }
     
     private let gitHubService: GitHubServiceProtocol
     

@@ -65,6 +65,7 @@
 		7DD709C9242673B7002CFB40 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709C8242673B7002CFB40 /* Issue.swift */; };
 		7DD709CB24267457002CFB40 /* MockIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709CA24267457002CFB40 /* MockIssue.swift */; };
 		7DD709CD242676F7002CFB40 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709CC242676F7002CFB40 /* MockError.swift */; };
+		7DD709D3242684A1002CFB40 /* IssueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709D2242684A1002CFB40 /* IssueExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		7DD709C8242673B7002CFB40 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		7DD709CA24267457002CFB40 /* MockIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIssue.swift; sourceTree = "<group>"; };
 		7DD709CC242676F7002CFB40 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		7DD709D2242684A1002CFB40 /* IssueExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,10 +357,11 @@
 		7D0838E72425653200DD503B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7D0838E52425651200DD503B /* ArrayExtensions.swift */,
 				7D0838EE242566D600DD503B /* AlertExtensions.swift */,
-				7D0838F02425672900DD503B /* UIViewControllerExtension.swift */,
+				7D0838E52425651200DD503B /* ArrayExtensions.swift */,
+				7DD709D2242684A1002CFB40 /* IssueExtension.swift */,
 				7D0838EC242565F800DD503B /* Reusable.swift */,
+				7D0838F02425672900DD503B /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD709AE24259A6D002CFB40 /* IssueViewController.swift in Sources */,
+				7DD709D3242684A1002CFB40 /* IssueExtension.swift in Sources */,
 				7DD709A024257B8B002CFB40 /* IssuesViewController.swift in Sources */,
 				7D0838E42425619200DD503B /* RepositoriesViewModel.swift in Sources */,
 				7D0838ED242565F800DD503B /* Reusable.swift in Sources */,
