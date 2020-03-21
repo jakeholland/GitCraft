@@ -6,51 +6,50 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
+import GitHubService
 import UIKit
 
 final class RepositoryViewController: UIViewController {
     
-    @IBOutlet private var tableView: UITableView!
-    
-    private let viewModel = RepositoryViewModel(username: "intuit")
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getRepositories()
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel! {
+        didSet {
+            descriptionLabel.isHidden = descriptionLabel.text == nil
+        }
     }
-}
-
-extension RepositoryViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRespositories
+    @IBOutlet private var watchersLabel: UILabel!
+    @IBOutlet private var starsLabel: UILabel!
+    @IBOutlet private var forksLabel: UILabel!
+    @IBOutlet private var issuesButton: UIButton!
+    
+    private var viewModel: RepositoryViewModel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-            let repository = viewModel.repository(at: indexPath.row),
-            let repositoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: RepositoryTableViewCell.reuseIdentifier, for: indexPath) as? RepositoryTableViewCell
-            else { fatalError("Repository at \(indexPath.row) not found!") }
+            let issuesViewController = segue.destination as? IssuesViewController
+            else { return }
         
-        repositoryTableViewCell.configure(for: repository)
-        
-        return repositoryTableViewCell
+        issuesViewController.configure(for: viewModel.repository)
     }
-}
-
-extension RepositoryViewController: UITableViewDelegate {
     
+    func configure(for repository: Repository) {
+        viewModel = RepositoryViewModel(repository: repository)
+    }
 }
 
 private extension RepositoryViewController {
-    func getRepositories() {
-        viewModel.getRepositories(success: {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }, failure: { error in
-            DispatchQueue.main.async {
-                self.presentError(error)
-            }
-        })
+    func setup() {
+        nameLabel.text = viewModel.name
+        descriptionLabel.text = viewModel.description
+        watchersLabel.text = viewModel.watchersText
+        starsLabel.text = viewModel.starsText
+        forksLabel.text = viewModel.forksText
+        issuesButton.setTitle( viewModel.issuesText, for: .normal)
     }
 }

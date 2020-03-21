@@ -9,6 +9,21 @@
 import Foundation
 
 public struct Issue {
-    let id: Int
-    let title: String
+    public let id: Int
+    public let number: Int
+    public let title: String
+    public let body: String
+    public let date: Date
+    public let lastUpdated: Date
+}
+
+extension Issue {
+    init(from issueResponse: IssueResponse) {
+        id = issueResponse.id
+        number = issueResponse.number
+        title = issueResponse.title
+        body = issueResponse.body
+        date = issueResponse.created_at
+        lastUpdated = issueResponse.updated_at
+    }
 }

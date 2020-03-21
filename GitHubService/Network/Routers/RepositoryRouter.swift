@@ -9,11 +9,11 @@
 enum RepositoryRouter: GitHubEndpointRouter {
 
     //https://developer.github.com/v3/repos/#list-repositories-for-a-user
-    case getRepository(username: String, type: RespositoryType, sort: SortType, sortDirection: SortDirection)
+    case getRepositories(username: String, type: RespositoryType, sort: SortType, sortDirection: SortDirection)
 
     var components: RequestComponents {
         switch self {
-        case .getRepository(let username, let type, let sort, let direction):
+        case .getRepositories(let username, let type, let sort, let direction):
             let queries: Parameters = [
                 "type": type.rawValue,
                 "sort": sort.rawValue,

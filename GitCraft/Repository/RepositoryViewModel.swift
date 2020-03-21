@@ -1,5 +1,5 @@
 //
-//  RepositoryViewModel.swift
+//  RepositoriyViewModel.swift
 //  GitCraft
 //
 //  Created by Jacob Holland on 3/20/20.
@@ -10,31 +10,19 @@ import GitHubService
 
 final class RepositoryViewModel {
     
-    var numberOfRespositories: Int { repositories.count }
+    let repository: Repository
     
-    private let username: String
+    var name: String { repository.name }
+    var description: String? { repository.description }
+    var watchersText: String { "\(repository.watchCount) Watchers"}
+    var starsText: String { "\(repository.starCount) Stars"}
+    var forksText: String { "\(repository.forkCount) Forks"}
+    var issuesText: String { "Issues (\(repository.issueCount))"}
+    
     private let gitHubService: GitHubServiceProtocol
-    private var repositories: [Repository] = []
     
-    init(username: String, gitHubService: GitHubServiceProtocol = GitHubService()) {
-        self.username = username
+    init(repository: Repository, gitHubService: GitHubServiceProtocol = GitHubService()) {
+        self.repository = repository
         self.gitHubService = gitHubService
     }
-    
-    func getRepositories(success: @escaping () -> Void, failure: @escaping (Error) -> Void) {
-        gitHubService.getRepositories(for: username) { [weak self] result in
-            switch result {
-            case .success(let repositories):
-                self?.repositories = repositories
-                success()
-            case .failure(let error):
-                failure(error)
-            }
-        }
-    }
-    
-    func repository(at index: Int) -> Repository? {
-        repositories[safe: index]
-    }
-    
 }

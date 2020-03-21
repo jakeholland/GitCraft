@@ -11,6 +11,7 @@ import Foundation
 public struct Repository {
     public let name: String
     public let description: String?
+    public let owner: String
     public let forkCount: Int
     public let starCount: Int
     public let watchCount: Int
@@ -19,11 +20,12 @@ public struct Repository {
 
 extension Repository {
     init(from repositoryResponse: RepositoryResponse) {
-        self.name = repositoryResponse.name
-        self.description = repositoryResponse.description
-        self.forkCount = repositoryResponse.forks_count
-        self.starCount = repositoryResponse.stargazers_count
-        self.watchCount = repositoryResponse.watchers_count
-        self.issueCount = repositoryResponse.open_issues
+        name = repositoryResponse.name
+        description = repositoryResponse.description
+        owner = repositoryResponse.owner.login
+        forkCount = repositoryResponse.forks_count
+        starCount = repositoryResponse.stargazers_count
+        watchCount = repositoryResponse.watchers_count
+        issueCount = repositoryResponse.open_issues
     }
 }
