@@ -76,9 +76,9 @@ struct RepositoryResponse: Codable {
     let disabled: Bool
     let open_issues_count: Int
     let license: LicenseResponse?
-    let forks: Int
-    let open_issues: Int
-    let watchers: Int
+    let forks: Int?
+    let open_issues: Int?
+    let watchers: Int?
     let default_branch: String
 }
 

@@ -26,6 +26,6 @@ extension Repository {
         forkCount = repositoryResponse.forks_count
         starCount = repositoryResponse.stargazers_count
         watchCount = repositoryResponse.watchers_count
-        issueCount = repositoryResponse.open_issues
+        issueCount = repositoryResponse.open_issues ?? 0
     }
 }

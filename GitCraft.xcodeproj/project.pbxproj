@@ -50,10 +50,16 @@
 		7DD709A224257BA6002CFB40 /* IssuesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709A124257BA6002CFB40 /* IssuesViewModel.swift */; };
 		7DD709A424257CBA002CFB40 /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709A324257CBA002CFB40 /* IssueTableViewCell.swift */; };
 		7DD709A624257D2D002CFB40 /* IssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709A524257D2D002CFB40 /* IssueResponse.swift */; };
-		7DD709AA24257E1B002CFB40 /* IssueRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709A924257E1B002CFB40 /* IssueRepository.swift */; };
+		7DD709AA24257E1B002CFB40 /* IssueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709A924257E1B002CFB40 /* IssueRouter.swift */; };
 		7DD709AC24257F22002CFB40 /* IssueState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709AB24257F22002CFB40 /* IssueState.swift */; };
 		7DD709AE24259A6D002CFB40 /* IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709AD24259A6D002CFB40 /* IssueViewController.swift */; };
 		7DD709B024259AD8002CFB40 /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709AF24259AD8002CFB40 /* IssueViewModel.swift */; };
+		7DD709B224266780002CFB40 /* issues.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DD709B124266780002CFB40 /* issues.json */; };
+		7DD709B424266796002CFB40 /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DD709B324266796002CFB40 /* repositories.json */; };
+		7DD709B724266806002CFB40 /* MockSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709B624266806002CFB40 /* MockSessionManager.swift */; };
+		7DD709BC242668AF002CFB40 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709BB242668AF002CFB40 /* Stub.swift */; };
+		7DD709BE24266909002CFB40 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709BD24266909002CFB40 /* MockError.swift */; };
+		7DD709C024266960002CFB40 /* HttpMockingTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD709BF24266960002CFB40 /* HttpMockingTestCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,10 +157,16 @@
 		7DD709A124257BA6002CFB40 /* IssuesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewModel.swift; sourceTree = "<group>"; };
 		7DD709A324257CBA002CFB40 /* IssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTableViewCell.swift; sourceTree = "<group>"; };
 		7DD709A524257D2D002CFB40 /* IssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueResponse.swift; sourceTree = "<group>"; };
-		7DD709A924257E1B002CFB40 /* IssueRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRepository.swift; sourceTree = "<group>"; };
+		7DD709A924257E1B002CFB40 /* IssueRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueRouter.swift; sourceTree = "<group>"; };
 		7DD709AB24257F22002CFB40 /* IssueState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueState.swift; sourceTree = "<group>"; };
 		7DD709AD24259A6D002CFB40 /* IssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewController.swift; sourceTree = "<group>"; };
 		7DD709AF24259AD8002CFB40 /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
+		7DD709B124266780002CFB40 /* issues.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = issues.json; sourceTree = "<group>"; };
+		7DD709B324266796002CFB40 /* repositories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = repositories.json; sourceTree = "<group>"; };
+		7DD709B624266806002CFB40 /* MockSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSessionManager.swift; sourceTree = "<group>"; };
+		7DD709BB242668AF002CFB40 /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
+		7DD709BD24266909002CFB40 /* MockError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		7DD709BF24266960002CFB40 /* HttpMockingTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMockingTestCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,8 +266,10 @@
 		7D0838A6242545B300DD503B /* GitHubServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D0838A7242545B300DD503B /* GitHubServiceTests.swift */,
 				7D0838A9242545B300DD503B /* Info.plist */,
+				7D0838A7242545B300DD503B /* GitHubServiceTests.swift */,
+				7DD709B5242667E8002CFB40 /* Fixtures */,
+				7DD709BA24266895002CFB40 /* Mocks */,
 			);
 			path = GitHubServiceTests;
 			sourceTree = "<group>";
@@ -356,10 +370,30 @@
 			isa = PBXGroup;
 			children = (
 				7D0838D22425505200DD503B /* GitHubEndpointRouter.swift */,
-				7DD709A924257E1B002CFB40 /* IssueRepository.swift */,
+				7DD709A924257E1B002CFB40 /* IssueRouter.swift */,
 				7D0838D42425509D00DD503B /* RepositoryRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		7DD709B5242667E8002CFB40 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				7DD709B124266780002CFB40 /* issues.json */,
+				7DD709B324266796002CFB40 /* repositories.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		7DD709BA24266895002CFB40 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7DD709BD24266909002CFB40 /* MockError.swift */,
+				7DD709BF24266960002CFB40 /* HttpMockingTestCase.swift */,
+				7DD709B624266806002CFB40 /* MockSessionManager.swift */,
+				7DD709BB242668AF002CFB40 /* Stub.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +561,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD709B224266780002CFB40 /* issues.json in Resources */,
+				7DD709B424266796002CFB40 /* repositories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,7 +614,7 @@
 				7D0838D32425505200DD503B /* GitHubEndpointRouter.swift in Sources */,
 				7D0838C424254DEA00DD503B /* URLSessionManager.swift in Sources */,
 				7D0838CF24254FAA00DD503B /* EndpointRouter.swift in Sources */,
-				7DD709AA24257E1B002CFB40 /* IssueRepository.swift in Sources */,
+				7DD709AA24257E1B002CFB40 /* IssueRouter.swift in Sources */,
 				7D0838D52425509D00DD503B /* RepositoryRouter.swift in Sources */,
 				7D0838DA2425539F00DD503B /* RespositoryType.swift in Sources */,
 				7D0838C024254D9B00DD503B /* SessionManager.swift in Sources */,
@@ -596,6 +632,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DD709C024266960002CFB40 /* HttpMockingTestCase.swift in Sources */,
+				7DD709B724266806002CFB40 /* MockSessionManager.swift in Sources */,
+				7DD709BC242668AF002CFB40 /* Stub.swift in Sources */,
+				7DD709BE24266909002CFB40 /* MockError.swift in Sources */,
 				7D0838A8242545B300DD503B /* GitHubServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,7 +797,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitCraft/GitCraft.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				CODE_SIGN_STYLE = Manual;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SU4T96VBX6;
 				INFOPLIST_FILE = GitCraft/Info.plist;
@@ -768,6 +810,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jakeholland.GitCraft";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -780,7 +824,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitCraft/GitCraft.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
+				CODE_SIGN_STYLE = Manual;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SU4T96VBX6;
 				INFOPLIST_FILE = GitCraft/Info.plist;
@@ -791,6 +837,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.jakeholland.GitCraft";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -1,5 +1,5 @@
 //
-//  IssueRepository.swift
+//  IssueRouter.swift
 //  GitHubService
 //
 //  Created by Jacob Holland on 3/20/20.

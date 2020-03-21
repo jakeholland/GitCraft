@@ -6,29 +6,54 @@
 //  Copyright © 2020 Jacob Holland. All rights reserved.
 //
 
-import XCTest
 @testable import GitHubService
+import XCTest
 
-class GitHubServiceTests: XCTestCase {
+final class GitHubServiceTests: HttpMockingTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    private lazy var gitHubService = GitHubService(sessionManager: mockSessionManager)
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetRepositoryForUser() {
+        let expectation = XCTestExpectation(description: "Get repos for user")
+        let username = "test"
+        
+        stub(.get, "users/\(username)/repos", fixture: "repositories")
+        
+        gitHubService.getRepositories(for: username) { result in
+            defer { expectation.fulfill() }
+            guard case let .success(repositories) = result else {
+                XCTFail("Unexpected Failure")
+                return
+            }
+            
+            XCTAssertEqual(repositories.count, 1)
+            XCTAssertEqual(repositories.first?.name, "Hello-World")
+            XCTAssertEqual(repositories.first?.description, "This your first repo!")
+            XCTAssertEqual(repositories.first?.owner, "octocat")
         }
+        
+        wait(for: [expectation], timeout: 5)
     }
 
+    func testGetIssuesForRepository() {
+        let expectation = XCTestExpectation(description: "Get issues for repository")
+        let username = "username"
+        let repo = "repo"
+        
+        stub(.get, "repos/\(username)/\(repo)/issues", fixture: "issues")
+        
+        gitHubService.getIssues(for: username, in: repo) { result in
+            defer { expectation.fulfill() }
+            guard case let .success(issues) = result else {
+                XCTFail("Unexpected Failure")
+                return
+            }
+            
+            XCTAssertEqual(issues.count, 1)
+            XCTAssertEqual(issues.first?.title, "Found a bug")
+            XCTAssertEqual(issues.first?.body, "I'm having a problem with this.")
+        }
+        
+        wait(for: [expectation], timeout: 5)
+    }
 }
