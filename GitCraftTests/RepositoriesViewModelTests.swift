@@ -26,7 +26,7 @@ final class RepositoriesViewModelTests: XCTestCase {
         
         viewModel.getRepositories(success: {
             XCTAssertEqual(self.viewModel.numberOfRespositories, 2)
-            XCTAssertEqual(self.viewModel.repository(at: 0)?.name, self.mockRepositories[0].name)
+            XCTAssertEqual(self.viewModel.repository(at: 0)?.name, self.mockRepositories.first?.name)
             expectation.fulfill()
         }, failure: { _ in
             XCTFail("Unexpected Failure")

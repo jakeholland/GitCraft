@@ -124,7 +124,6 @@
 		7D08386024253C0800DD503B /* GitCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D08386424253C0800DD503B /* RepositoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelTests.swift; sourceTree = "<group>"; };
 		7D08386624253C0800DD503B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D08386F24253C1100DD503B /* GitCraft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCraft.entitlements; sourceTree = "<group>"; };
 		7D083898242545B200DD503B /* GitHubService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D08389A242545B200DD503B /* GitHubService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubService.h; sourceTree = "<group>"; };
 		7D08389B242545B200DD503B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,8 +239,6 @@
 		7D08384C24253C0500DD503B /* GitCraft */ = {
 			isa = PBXGroup;
 			children = (
-				7D08386F24253C1100DD503B /* GitCraft.entitlements */,
-				7D08385B24253C0800DD503B /* Info.plist */,
 				7D08384D24253C0500DD503B /* AppDelegate.swift */,
 				7D08384F24253C0500DD503B /* SceneDelegate.swift */,
 				7D08385624253C0800DD503B /* Assets.xcassets */,
@@ -249,6 +246,7 @@
 				7DD7099C242579F6002CFB40 /* Issues */,
 				7D08385824253C0800DD503B /* LaunchScreen.storyboard */,
 				7D0838E22425615400DD503B /* Repository */,
+				7DD709CE24267AB8002CFB40 /* Supporting Files */,
 			);
 			path = GitCraft;
 			sourceTree = "<group>";
@@ -258,7 +256,7 @@
 			children = (
 				7D08386424253C0800DD503B /* RepositoriesViewModelTests.swift */,
 				7DD709C324267148002CFB40 /* Mocks */,
-				7D08386624253C0800DD503B /* Info.plist */,
+				7DD709CF24267AE0002CFB40 /* Supporting Files */,
 			);
 			path = GitCraftTests;
 			sourceTree = "<group>";
@@ -267,11 +265,11 @@
 			isa = PBXGroup;
 			children = (
 				7D08389A242545B200DD503B /* GitHubService.h */,
-				7D08389B242545B200DD503B /* Info.plist */,
 				7D0838B724254C5800DD503B /* GitHubService.swift */,
 				7D0838C124254DA600DD503B /* Models */,
 				7D0838C524254E1600DD503B /* Network */,
 				7D0838C224254DBD00DD503B /* Protocols */,
+				7DD709D024267AF8002CFB40 /* Supporting Files */,
 			);
 			path = GitHubService;
 			sourceTree = "<group>";
@@ -279,10 +277,10 @@
 		7D0838A6242545B300DD503B /* GitHubServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D0838A9242545B300DD503B /* Info.plist */,
 				7D0838A7242545B300DD503B /* GitHubServiceTests.swift */,
 				7DD709B5242667E8002CFB40 /* Fixtures */,
 				7DD709BA24266895002CFB40 /* Mocks */,
+				7DD709D124267B13002CFB40 /* Supporting Files */,
 			);
 			path = GitHubServiceTests;
 			sourceTree = "<group>";
@@ -420,6 +418,38 @@
 				7DD709C424267191002CFB40 /* MockRepository.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		7DD709CE24267AB8002CFB40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D08385B24253C0800DD503B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DD709CF24267AE0002CFB40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D08386624253C0800DD503B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DD709D024267AF8002CFB40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D08389B242545B200DD503B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DD709D124267B13002CFB40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D0838A9242545B300DD503B /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -828,12 +858,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = GitCraft/GitCraft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SU4T96VBX6;
-				INFOPLIST_FILE = GitCraft/Info.plist;
+				INFOPLIST_FILE = "GitCraft/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -854,12 +883,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = GitCraft/GitCraft.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "3rd Party Mac Developer Application";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = SU4T96VBX6;
-				INFOPLIST_FILE = GitCraft/Info.plist;
+				INFOPLIST_FILE = "GitCraft/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -880,9 +908,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SU4T96VBX6;
-				INFOPLIST_FILE = GitCraftTests/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "GitCraftTests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -891,6 +919,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitCraftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitCraft.app/GitCraft";
@@ -902,9 +932,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SU4T96VBX6;
-				INFOPLIST_FILE = GitCraftTests/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "GitCraftTests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -913,6 +943,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitCraftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitCraft.app/GitCraft";
@@ -924,14 +956,14 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = SU4T96VBX6;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GitHubService/Info.plist;
+				INFOPLIST_FILE = "GitHubService/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -941,6 +973,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitHubService;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -955,14 +989,14 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = SU4T96VBX6;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = GitHubService/Info.plist;
+				INFOPLIST_FILE = "GitHubService/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -972,6 +1006,8 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitHubService;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -984,9 +1020,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SU4T96VBX6;
-				INFOPLIST_FILE = GitHubServiceTests/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "GitHubServiceTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -994,6 +1030,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitHubServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1003,9 +1041,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SU4T96VBX6;
-				INFOPLIST_FILE = GitHubServiceTests/Info.plist;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "GitHubServiceTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1013,6 +1051,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jakeholland.GitHubServiceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
