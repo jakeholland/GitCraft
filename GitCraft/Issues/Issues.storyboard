@@ -72,7 +72,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1e4-EY-Npw"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HDU-5d-fWn"/>
+                    <navigationItem key="navigationItem" title="Issues" id="HDU-5d-fWn">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="KZ8-oc-mvQ">
+                            <connections>
+                                <action selector="close" destination="6aR-o2-hPF" id="Hx4-wm-YNA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="dWt-ST-Yy6" id="yec-tY-7TF"/>

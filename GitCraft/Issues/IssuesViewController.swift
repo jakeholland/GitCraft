@@ -32,6 +32,10 @@ final class IssuesViewController: UIViewController {
     func configure(for repository: Repository) {
         viewModel = IssuesViewModel(repository: repository)
     }
+    
+    @IBAction private func close() {
+        dismiss(animated: true)
+    }
 }
 
 extension IssuesViewController: UITableViewDataSource {
